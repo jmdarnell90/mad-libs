@@ -7,7 +7,7 @@ const bodyPart= document.getElementById("bodyPart");
 const verb1= document.getElementById("verb1");
 const food= document.getElementById("food");
 
-// variable to display the mad lib
+// variable to display the mad li0
 const madLibDisplay = document.querySelector(".mad-lib");
 
 // variable for the form
@@ -19,6 +19,33 @@ const story = `My friends and I started a secret club! We meet every day by the 
 form.addEventListener("submit", function (event) {
     event.preventDefault();
 
+  if (adj1.value == "") {
+    alert(`${adj1.name} must be filled out!`);
+    adj1.focus();
+  } else if (noun1.value == "") {
+    alert(`${noun1.name} must be filled out!`);
+    noun1.focus();
+  } else if (adj2.value == "") {
+    alert(`${adj2.name} must be filled out!`);
+    adj2.focus();
+  } else if (clothing.value == "") {
+    alert(`${clothing.name} must be filled out!`);
+    clothing.focus();
+  } else if (bodyPart.value == "") {
+    alert(`${bodyPart.name} must be filled out!`);
+    bodyPart.focus();
+  } else if (verb1.value == "") {
+    alert(`${verb1.name} must be filled out!`);
+    verb1.focus();
+  } else if (food.value == "") {
+    alert(`${food.name} must be filled out!`);
+    food.focus();
+  } else {
+    madLibStoryDisplay()
+  } 
+});
+
+function madLibStoryDisplay(){
     madLibDisplay.innerHTML = story
     .replace(`${adj1}`, adj1.value)
     .replace(`${noun1}`, noun1.value)
@@ -27,4 +54,4 @@ form.addEventListener("submit", function (event) {
     .replace(`${bodyPart}`, bodyPart.value)
     .replace(`${verb1}`, verb1.value)
     .replace(`${food}`, food.value)
-});
+}
